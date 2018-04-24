@@ -1,10 +1,10 @@
-var uuid = require('uuid/v4');
-var reservations = require("../data/resData");
+
+var reservations = require("../data/friends");
 
 module.exports = function(app) {
 
-  // Get ALL tables/reservations
-  app.get('/api/tables', function(req, res) {
+  // Get ALL friends
+  app.get('/api/friends', function(req, res) {
   
     return res.json(reservations);
 
@@ -15,7 +15,6 @@ module.exports = function(app) {
 
     var newRes = req.body;
 
-    newRes.id = uuid();
 
     console.log(newRes);
 
