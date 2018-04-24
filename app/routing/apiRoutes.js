@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   // POST a new reserveration
-  app.post('/api/tables/new', function(req, res) {
+  app.post('/api/friends', function(req, res) {
 
     var newRes = req.body;
 
