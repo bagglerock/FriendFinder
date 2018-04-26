@@ -1,12 +1,12 @@
 
-var reservations = require("../data/friends");
+var friends = require("../data/friends");
 
 module.exports = function(app) {
 
   // Get ALL friends
   app.get('/api/friends', function(req, res) {
   
-    return res.json(reservations);
+    return res.json(friends);
 
   });
 
@@ -18,7 +18,7 @@ module.exports = function(app) {
 
     console.log(newRes);
 
-    reservations.push(newRes);
+    friends.push(newRes);
 
     res.json(newRes);
 
