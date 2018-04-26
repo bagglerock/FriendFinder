@@ -1,4 +1,3 @@
-
 var friends = require("../data/friends");
 
 module.exports = function(app) {
@@ -10,17 +9,15 @@ module.exports = function(app) {
 
   });
 
-  // POST a new reserveration
-  app.post('/api/friends', function(req, res) {
+  app.post('/api/friends/new', function(req, res) {
 
-    var newRes = req.body;
+    var newFriend = req.body;
 
+    console.log(newFriend);
 
-    console.log(newRes);
+    friends.push(newFriend);
 
-    friends.push(newRes);
-
-    res.json(newRes);
+    res.json(newFriend);
 
   });
 
