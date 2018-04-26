@@ -8,13 +8,19 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <style>
     .header,
-    .about, 
+    .about,
     .questions {
       border-bottom: solid black 1px;
     }
 
-    .about, .questions, .footer {
+    .about,
+    .footer {
       padding-bottom: 25px;
+    }
+
+    .question {
+      margin: 10px;
+      padding: 5px;
     }
 
     .selection-dropdown {
@@ -22,7 +28,14 @@
       font-size: 15px;
     }
 
-    .footer, .about {
+    .submit {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: solid black 1px;
+    }
+
+    .footer,
+    .about {
       padding-top: 20px;
     }
 
@@ -34,6 +47,10 @@
 
     .footer>a:last-child {
       border: none;
+    }
+
+    #submit-button {
+      width: 200px;
     }
   </style>
   <title>Friend Finder - Survey</title>
@@ -213,14 +230,14 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-md-12 submit">
+            <a class="btn btn-primary" id="submit-button" href="/survey" role="button">Submit</a>
+          </div>
+        </div>
+
       </div>
     </div>
-
-
-
-
-
-
 
 
     <div class="row">
