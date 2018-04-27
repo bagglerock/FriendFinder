@@ -141,8 +141,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 1</h3>
+            <p>I love to talk to new people...</p>
             <select class="custom-select selection-dropdown" id="q1">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -156,8 +156,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 2</h3>
+            <p>I love pets...</p>
             <select class="custom-select selection-dropdown" id="q2">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -171,8 +171,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 3</h3>
+            <p>When I am at the beach, I love to wear my shoes on the sand...</p>
             <select class="custom-select selection-dropdown" id="q3">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -186,8 +186,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 4</h3>
+            <p>At a restaurant, I order my appetizer at the same time I order my main meal...</p>
             <select class="custom-select selection-dropdown" id="q4">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -201,8 +201,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 5</h3>
+            <p>I like to drive...</p>
             <select class="custom-select selection-dropdown" id="q5">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -216,8 +216,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 6</h3>
+            <p>I keep the TV on and loud even if no one is watching...</p>
             <select class="custom-select selection-dropdown" id="q6">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -231,8 +231,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 7</h3>
+            <p>I put gravy on my spaghetti...</p>
             <select class="custom-select selection-dropdown" id="q7">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -246,8 +246,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 8</h3>
+            <p>There are nine planets in the solar system...</p>
             <select class="custom-select selection-dropdown" id="q8">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -261,8 +261,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 9</h3>
+            <p>I can go out to a bar without other people...</p>
             <select class="custom-select selection-dropdown" id="q9">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -276,8 +276,8 @@
 
         <div class="row">
           <div class="col-md-12 question">
-            <h3>Question</h3>
-            <p>blah</p>
+            <h3>Question 10</h3>
+            <p>I think that online tests are a great way to meet people...</p>
             <select class="custom-select selection-dropdown" id="q10">
               <option selected>Choose...</option>
               <option value="1">One (Strongly Disagree)</option>
@@ -343,7 +343,6 @@
         ]
       };
 
-      // Question: What does this code do??
       $.post("/api/friends", newFriend)
         .then(function (data) {
           $("#match-name").empty().text(data.name);
