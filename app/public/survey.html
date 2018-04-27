@@ -50,6 +50,64 @@
       border: none;
     }
 
+    #match-modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 2;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0,0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+
+    .match-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 60%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    .match-div {
+      margin: 5px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .match-image {
+      max-width: 300px;
+    }
+
     #submit-button {
       width: 200px;
     }
@@ -251,6 +309,18 @@
 
   </div>
 
+  <div id="match-modal" class="modal">
+    <div class="match-content">
+      <div class="match-div close">&times;</div>
+      <div class="match-div">
+        <h3>You match with: <span id="match-name"></span></h3>
+      </div>
+      <div class="match-div">
+        <span id="match-photo"></span>
+      </div>
+    </div>
+  </div>
+
   <script type="text/javascript">
     // Question: What does this code do?
     $("#submit-button").on("click", function (event) {
@@ -260,30 +330,45 @@
         name: $("#name").val().trim(),
         photo: $("#photo-link").val().trim(),
         scores: [
-        $("#q1").val(),
-        $("#q2").val(),
-        $("#q3").val(),
-        $("#q4").val(),
-        $("#q5").val(),
-        $("#q6").val(),
-        $("#q7").val(),
-        $("#q8").val(),
-        $("#q9").val(),
-        $("#q10").val(),
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val(),
         ]
       };
 
       // Question: What does this code do??
       $.post("/api/friends", newFriend)
         .then(function (data) {
-          console.log(data);
+          $("#match-name").empty().text(data.name);
+          var imageTag = $("<img>");
+          imageTag.attr("src", data.photo).attr("alt", "Fugly").addClass("match-image");
+          $("#match-photo").empty().append(imageTag);
+          $("#match-modal").show();
         });
 
     });
+
+    //   Event listener to close signin modal if x is clicked
+    $(".close").on("click", function () {
+      $(".modal").hide();
+    });
+
+    //  Event listener to close signin modal if the modal is clicked in the gray area
+    $(document).on("click", function (event) {
+      // not sure why the jquery reference to this would not work but whatever, i should use js instead
+      var modal = document.getElementById("match-modal");
+      if (event.target == modal) {
+        $(".modal").hide();
+      }
+    });
   </script>
-
-
-
 
 
 </body>

@@ -16,6 +16,7 @@ module.exports = function(app) {
   function findMatch(person) {
     var mostCompatible;
     var mostCompatibleScore;
+    var place;
 
     for(var i = 0; i < friends.length; i++){
       var compatibilityComparison = 0;
@@ -26,14 +27,16 @@ module.exports = function(app) {
         if (mostCompatibleScore && compatibilityComparison < mostCompatibleScore){
             mostCompatible = friends[i].name;
             mostCompatibleScore = compatibilityComparison;
+            place = i;
         } else {
           mostCompatible = friends[i].name;
           mostCompatibleScore = compatibilityComparison;
+          place = i;
         }
       }
 
     }
-    return mostCompatible;
+    return friends[place];
 
   }
 
@@ -51,8 +54,8 @@ module.exports = function(app) {
     var match = findMatch(newFriend);
 
     friends.push(newFriend);
-    console.log("Most compatible match is " + match);
-    res.json(newFriend);
+    //console.log("Most compatible match is " + match);
+    res.json(match);
 
   });
 
